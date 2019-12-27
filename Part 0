@@ -1,0 +1,8 @@
+1.1
+
+docker ps -a
+WARNING: Error loading config file: /home/fariha/.docker/config.json: open /home/fariha/.docker/config.json: permission denied
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                           PORTS                  NAMES
+120ef8ace697        centos:latest       &quot;/bin/bash&quot;              About an hour ago   Exited (0) About an hour ago                            centos_c
+ecaa009c1598        busybox:latest      &quot;sh&quot;                     About an hour ago   Exited (137) About an hour ago                          busybox_c
+09730069a675        nginx:alpine        &quot;nginx -g &apos;daemon of…&quot;   About an hour ago   Up About an hour                 0.0.0.0:8081-&gt;80/tcp   nginx_c
