@@ -32,3 +32,52 @@ Wrote to file /usr/app/logs.txt
 
 1.5
 
+
+1.7
+
+Dockerfile
+
+cat Dockerfile
+FROM ubuntu:latest
+RUN apt-get update
+RUN apt-get install curl -y
+RUN mkdir /abc
+COPY shell.sh /abc
+CMD sh abc/shell.sh
+
+docker image build -t shell_script_14 .
+WARNING: Error loading config file: /home/fariha/.docker/config.json: open /home/fariha/.docker/config.json: permission denied
+Sending build context to Docker daemon  6.656kB
+Step 1/6 : FROM ubuntu:latest
+ ---> 549b9b86cb8d
+Step 2/6 : RUN apt-get update
+ ---> Using cache
+ ---> c5fb252bb186
+Step 3/6 : RUN apt-get install curl -y
+ ---> Using cache
+ ---> 033489aae696
+Step 4/6 : RUN mkdir /abc
+ ---> Using cache
+ ---> 34f4aa150967
+Step 5/6 : COPY shell.sh /abc
+ ---> Using cache
+ ---> fd951d78c21f
+Step 6/6 : CMD sh abc/shell.sh
+ ---> Using cache
+ ---> d5b5e61d7ce4
+Successfully built d5b5e61d7ce4
+Successfully tagged shell_script_14:latest
+
+docker container run -it --name shell_script14_C shell_script_14 
+WARNING: Error loading config file: /home/fariha/.docker/config.json: open /home/fariha/.docker/config.json: permission denied
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+
