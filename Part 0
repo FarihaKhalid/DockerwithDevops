@@ -81,3 +81,18 @@ Searching..
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
 
+1.8
+
+sudo docker container run -it --name container_volume8 --mount type=bind,source=/home/fariha/Fariha/Docker/DevopsWithDocker/Part0/1.8,target=/usr/app/log.txt devopsdockeruh/first_volume_exercise:latest
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+
+1.9
+
+docker container run -d -p 8081:80 --name port_excercise_container devopsdockeruh/ports_exercise:latest 
+WARNING: Error loading config file: /home/fariha/.docker/config.json: open /home/fariha/.docker/config.json: permission denied
+5903f2f674e03669b5975f2b6b9fc28958a1ae5e02cb35e7f8ec6b3f4f950fff
+
+
