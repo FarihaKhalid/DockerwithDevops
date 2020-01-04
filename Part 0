@@ -95,4 +95,23 @@ docker container run -d -p 8081:80 --name port_excercise_container devopsdockeru
 WARNING: Error loading config file: /home/fariha/.docker/config.json: open /home/fariha/.docker/config.json: permission denied
 5903f2f674e03669b5975f2b6b9fc28958a1ae5e02cb35e7f8ec6b3f4f950fff
 
+1.10
+sudo docker container run -it --name front_end_app_c24 -p 5001:5000 front_end_app sh 
+
+Dockerfile
+FROM node:10
+WORKDIR /app
+COPY frontend-example-docker /app
+RUN cd /app apt-get update && apt-get install curl -y
+RUN cd /app apt-get install -y nodejs
+RUN cd /app node -v && npm -v
+RUN cd /app curl -sL https://deb.nodesource.com/setup_10.x | sh
+EXPOSE 5000
+RUN cd /app && npm install -y
+CMD cd /app && npm start
+
+1.11
+
+
+
 
