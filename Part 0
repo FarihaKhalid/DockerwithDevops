@@ -113,5 +113,19 @@ CMD cd /app && npm start
 1.11
 
 
+sudo docker container run -it --name backend_app_c3 -p 8000:8000 --mount type=bind,source=/home/fariha/Fariha/Docker/DevopsWithDocker/Part0/1.11,target=/var/lib/share backend_app
+
+Dockerfile
+FROM node:10
+WORKDIR /app
+COPY backend-example-docker /app
+RUN cd /app apt-get update && apt-get install curl -y
+RUN cd /app apt-get install -y nodejs
+RUN cd /app node -v && npm -v
+RUN cd /app curl -sL https://deb.nodesource.com/setup_10.x | sh
+RUN cd /app && npm install -y
+CMD cd /app && npm start
+
+
 
 
